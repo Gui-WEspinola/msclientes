@@ -4,6 +4,7 @@ import io.github.guiwespinola.msclientes.ClientService;
 import io.github.guiwespinola.msclientes.application.representation.ClientSaveRequest;
 import io.github.guiwespinola.msclientes.domain.Client;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -13,12 +14,14 @@ import java.net.URI;
 @RestController
 @RequestMapping("clients")
 @RequiredArgsConstructor
+@Slf4j // permite acesso ao log
 public class ClientController {
 
     private final ClientService clientService;
 
     @GetMapping
     public String status() {
+        log.info("Obtendo o status do microservice de clientes");
         return "ok";
     }
 
