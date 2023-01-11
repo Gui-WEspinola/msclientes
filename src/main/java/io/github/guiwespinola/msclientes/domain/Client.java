@@ -1,6 +1,5 @@
 package io.github.guiwespinola.msclientes.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,18 +11,18 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Cliente {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cpf;
-    private String nome;
-    private Integer idade;
+    private String name;
+    private Integer age;
 
-    public Cliente(String cpf, String nome, Integer idade) {
+    public Client(String cpf, String nome, Integer age) {
         this.cpf = cpf;
-        this.nome = nome;
-        this.idade = idade;
+        this.name = nome;
+        this.age = age;
     }
 }
